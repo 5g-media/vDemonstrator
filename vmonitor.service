@@ -1,0 +1,13 @@
+[Unit]
+Description=vMonitor
+After=network.target
+
+[Service]
+Type=simple
+User=debian
+WorkingDirectory=/home/debian/vmonitor
+ExecStart=/usr/bin/node ./bin/www
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
